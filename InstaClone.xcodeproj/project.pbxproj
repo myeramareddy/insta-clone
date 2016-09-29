@@ -14,6 +14,10 @@
 		C887062C1D9CD11C006F44DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C887062A1D9CD11C006F44DE /* LaunchScreen.storyboard */; };
 		C88706371D9CD11C006F44DE /* InstaCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88706361D9CD11C006F44DE /* InstaCloneTests.swift */; };
 		C88706421D9CD11C006F44DE /* InstaCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88706411D9CD11C006F44DE /* InstaCloneUITests.swift */; };
+		C88706541D9CD334006F44DE /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88706501D9CD334006F44DE /* AWSCognito.framework */; };
+		C88706551D9CD334006F44DE /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88706511D9CD334006F44DE /* AWSCore.framework */; };
+		C88706561D9CD334006F44DE /* AWSDynamoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88706521D9CD334006F44DE /* AWSDynamoDB.framework */; };
+		C88706571D9CD334006F44DE /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88706531D9CD334006F44DE /* AWSS3.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,11 @@
 		C887063D1D9CD11C006F44DE /* InstaCloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaCloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88706411D9CD11C006F44DE /* InstaCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaCloneUITests.swift; sourceTree = "<group>"; };
 		C88706431D9CD11C006F44DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C88706501D9CD334006F44DE /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognito.framework; path = Frameworks/AWSCognito.framework; sourceTree = "<group>"; };
+		C88706511D9CD334006F44DE /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = Frameworks/AWSCore.framework; sourceTree = "<group>"; };
+		C88706521D9CD334006F44DE /* AWSDynamoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSDynamoDB.framework; path = Frameworks/AWSDynamoDB.framework; sourceTree = "<group>"; };
+		C88706531D9CD334006F44DE /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = Frameworks/AWSS3.framework; sourceTree = "<group>"; };
+		C88706581D9CE406006F44DE /* InstaClone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InstaClone-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +63,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C88706571D9CD334006F44DE /* AWSS3.framework in Frameworks */,
+				C88706541D9CD334006F44DE /* AWSCognito.framework in Frameworks */,
+				C88706561D9CD334006F44DE /* AWSDynamoDB.framework in Frameworks */,
+				C88706551D9CD334006F44DE /* AWSCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +90,7 @@
 		C88706151D9CD11C006F44DE = {
 			isa = PBXGroup;
 			children = (
+				C887064F1D9CD326006F44DE /* Frameworks */,
 				C88706201D9CD11C006F44DE /* InstaClone */,
 				C88706351D9CD11C006F44DE /* InstaCloneTests */,
 				C88706401D9CD11C006F44DE /* InstaCloneUITests */,
@@ -103,6 +117,7 @@
 				C88706281D9CD11C006F44DE /* Assets.xcassets */,
 				C887062A1D9CD11C006F44DE /* LaunchScreen.storyboard */,
 				C887062D1D9CD11C006F44DE /* Info.plist */,
+				C88706581D9CE406006F44DE /* InstaClone-Bridging-Header.h */,
 			);
 			path = InstaClone;
 			sourceTree = "<group>";
@@ -123,6 +138,17 @@
 				C88706431D9CD11C006F44DE /* Info.plist */,
 			);
 			path = InstaCloneUITests;
+			sourceTree = "<group>";
+		};
+		C887064F1D9CD326006F44DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C88706501D9CD334006F44DE /* AWSCognito.framework */,
+				C88706511D9CD334006F44DE /* AWSCore.framework */,
+				C88706521D9CD334006F44DE /* AWSDynamoDB.framework */,
+				C88706531D9CD334006F44DE /* AWSS3.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +219,7 @@
 				TargetAttributes = {
 					C887061D1D9CD11C006F44DE = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 238VTQRB79;
 						ProvisioningStyle = Automatic;
 					};
 					C88706311D9CD11C006F44DE = {
@@ -410,10 +437,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 238VTQRB79;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = InstaClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = words.of.riches.InstaClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "InstaClone/InstaClone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -422,10 +456,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 238VTQRB79;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = InstaClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = words.of.riches.InstaClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "InstaClone/InstaClone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
